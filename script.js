@@ -1,11 +1,12 @@
 window.addEventListener('DOMContentLoaded',function(){
 'use strict';
 let date = new Date();
-let hello = document.querySelector('.hello');   
 let hours = date.getHours();
 let getDay = date.getDay(); 
+let hello = document.querySelector('.hello'); 
 let day = document.querySelector('.day');
 let time = document.querySelector('.time');
+
 
 function timeOfDay (){ 
  if (hours < 5 && hours === 24) {
@@ -23,13 +24,14 @@ timeOfDay();
 
 
 let days = ['Воскресенье','Понедельник','Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-day.textContent = days[getDay];
+day.textContent = 'Сегодня: ' + days[getDay];
 
 
 
 function timer() {
 let date = new Date();  
-time.textContent = date.toLocaleString('en-US',{hour:'numeric',minute:'numeric',second:'numeric',hour12:true});
+time.textContent = 'Текущее время: '+ date.toLocaleString('en-US',{hour:'numeric',
+minute:'numeric',second:'numeric',hour12:true});
 }
 setInterval (timer, 1000);
 
